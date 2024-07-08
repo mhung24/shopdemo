@@ -8,7 +8,7 @@ import { ListCategory } from "./ListCategory/ListCategory";
 export const Menu = () => {
   const list = [
     {
-      to: "/",
+      to: "/shopdemo",
       title: "Trang chủ",
     },
     {

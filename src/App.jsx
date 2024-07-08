@@ -37,19 +37,15 @@ function App() {
   ];
 
   return (
-    <>
-      <Routes>
-        <Route path="" element={<Header />}>
-          <Route path="/" element={<Home />} />
+    <Routes>
+      <Route path="" element={<Header />}>
+        <Route path="/shopdemo" element={<Home />} />
 
-          {list.map((item, index) => (
-            <Route path={item.to} key={index} element={<h1>{item.title}</h1>} />
-          ))}
-        </Route>
-      </Routes>
-      <div>hung</div>
-    </>
+        {list.map((item, index) => (
+          <Route path={item.to} key={index} element={<h1>{item.title}</h1>} />
+        ))}
+      </Route>
+    </Routes>
   );
 }
-
 export default App;

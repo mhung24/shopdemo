@@ -38,7 +38,7 @@ export const Header = () => {
   return (
     <>
       <div className="header flex flex_fun">
-        <NavLink to={"/"}>
+        <NavLink to={"/shopdemo"}>
           <img src={logo} alt="Logo" className="header_logo" />
         </NavLink>
 
