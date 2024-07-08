@@ -1,0 +1,48 @@
+.menu {
+  background-color: #1fc9ff;
+}
+
+.menu_item {
+  width: 1180px;
+  margin: 0 auto;
+  height: 42px;
+  color: #fff;
+  font-size: 16px;
+}
+
+.category_product {
+  position: relative;
+
+  width: 262px;
+  font-weight: 600;
+  margin-right: 20px;
+}
+
+.category_product:hover .category_item {
+  display: block;
+}
+
+.category_product::before {
+  position: absolute;
+  content: "";
+  height: 22px;
+  width: 2px;
+  background-color: #fff;
+  top: 2px;
+  right: 0;
+}
+
+.list_menu {
+  display: flex;
+  flex: 1;
+  gap: 40px;
+}
+
+.list_icon {
+  font-size: 22px;
+  margin-right: 10px;
+}
+
+.active {
+  color: #f7ed65;
+}

@@ -1,0 +1,274 @@
+.list_technologyproduct-item {
+  width: calc(1180px - 280px);
+  display: flex;
+  flex-wrap: wrap;
+  /* gap: 42px; */
+  /* justify-content: space-around; */
+  margin-left: 28px;
+}
+
+.list_technologyproduct-banner {
+  width: 280px;
+}
+
+.list_technologyproduct-banner > img:last-child {
+  margin-top: 20px;
+}
+
+.list_infor {
+  width: 188px;
+  height: 304px;
+  background-color: #fff;
+  overflow: hidden;
+  border: 1px solid #ece9e9;
+  margin: 0 15px 20px;
+  position: relative;
+  cursor: pointer;
+}
+
+.sale {
+  content: "";
+  position: relative;
+  top: -94%;
+  z-index: 3;
+  padding: 5px 0;
+  border-radius: 0;
+  height: 35px;
+  text-align: center;
+  width: 40px;
+  line-height: 15px;
+  color: #323c42;
+  background-color: #ffd004;
+  font-weight: bold;
+  font-size: 12px;
+}
+
+.sale::after {
+  position: absolute;
+  content: "";
+  border: 10px;
+  border-style: solid;
+  border-color: #ffd004 #ffd004 transparent transparent;
+  bottom: -20px;
+}
+
+.sale::before {
+  position: absolute;
+  content: "";
+  border: 10px;
+  left: 0;
+  border-style: solid;
+  border-color: #ffd004 transparent transparent #ffd004;
+  bottom: -20px;
+}
+
+/* .list_infor::before {
+  position: absolute;
+  content: "";
+  height: 20px;
+  width: 20px;
+  background-color: #eb3e32;
+} */
+
+.list_infor:hover .list_infor-icon-cart {
+  background-color: #eb3e32;
+  color: #fff;
+}
+
+.list_infor-img {
+  height: 156px;
+  width: 100%;
+  object-fit: contain;
+  will-change: transform;
+  transition: 0.3s;
+}
+
+.list_infor-name {
+  margin: 10px 14px 5px;
+  font-size: 16px;
+  font-weight: 600;
+  height: 54px;
+}
+
+.list_infor-name:hover {
+  color: #ffb416;
+}
+
+.list_infor-price {
+  margin: 0 14px;
+  color: #eb3e32;
+}
+
+.list_infor-price-old {
+  margin: 6px 14px;
+  color: #999999;
+  text-decoration: line-through;
+}
+
+.list_infor-icon-cart {
+  font-size: 20px;
+  margin: 0 14px;
+  color: #999999;
+  width: 26px;
+  height: 26px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+}
+
+.list_infor-img:hover {
+  transform: scale(1.1);
+}
+
+.fashion_banner {
+  width: 580px;
+}
+
+.infor_trend {
+  margin: 0 5px;
+}
+
+.list_infor-img {
+  height: 156px;
+  width: 100%;
+  object-fit: contain;
+  will-change: transform;
+  transition: 0.3s;
+}
+
+.list_infor-name {
+  margin: 10px 14px 5px;
+  font-size: 16px;
+  font-weight: 600;
+  height: 54px;
+}
+
+.list_infor-img:hover {
+  transform: scale(1.1);
+}
+
+.trending_product {
+  display: flex;
+  text-align: center;
+  background-color: #eaedf1;
+}
+
+.trending_product-header {
+  width: calc(1180px / 3);
+  cursor: pointer;
+  color: #98a5b9;
+}
+
+.trending_product-name {
+  font-size: 20px;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-top: 5px;
+}
+
+.trending_product-title {
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.list_product-trend {
+  background-color: #ed4f2e;
+  width: 100%;
+  height: 350px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.trend_img {
+  height: 310px;
+}
+
+.trending_click {
+  color: #fff;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+.trending_bgo {
+  background-color: #ed4f2e;
+}
+
+.trending_bgy {
+  background-color: #ffd744;
+}
+
+.trending_bgg {
+  background-color: #b4e4f2;
+}
+
+.style {
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+
+.technologyproduct {
+  margin-top: 20px;
+}
+
+.list_technologyproduct {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.technologyproduct_header {
+  display: flex;
+  justify-content: space-between;
+  height: 42px;
+  align-items: center;
+  border-bottom: 2px solid #eb3e32;
+  margin-top: 20px;
+}
+
+.technologyproduct_header-name {
+  background-color: #eb3e32;
+  color: #fff;
+  font-size: 20px;
+  text-transform: uppercase;
+  font-weight: 600;
+  padding: 6px 8px;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+.list_item:hover,
+.technologyproduct_header-name:hover {
+  color: #ffb416;
+}
+
+.list_technologyproduct-name {
+  display: flex;
+  gap: 20px;
+  font-weight: 600;
+}
+
+.suggest {
+  width: 1180px;
+  justify-content: space-evenly;
+  margin: 0;
+  padding: 5px 0;
+  border: 2px solid #eb3e32;
+  border-top: none;
+  position: relative;
+}
+
+.suggest > .list_infor {
+  margin: 10px 0;
+}
+
+.product > .technologyproduct:first-child > .list_technologyproduct {
+  margin: 0;
+}
+
+.img_preferential-price {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+}

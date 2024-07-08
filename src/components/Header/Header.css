@@ -1,0 +1,163 @@
+/* .main {
+  
+} */
+
+.header {
+  height: 80px;
+  width: 1180px;
+  margin: 0 auto;
+}
+
+.flex_fun {
+  text-align: center;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header_logo {
+  width: 200px;
+}
+
+.header_search {
+  background-color: #fff;
+  border-radius: 8px;
+  width: 340px;
+  height: 42px;
+  border: 1px solid #000;
+  position: relative;
+}
+
+.history_search {
+  position: absolute;
+  width: 99%;
+  max-height: 216px;
+  background-color: #fff;
+  top: 42px;
+  z-index: 999999;
+  box-shadow: 0 1px 20px 0 rgba(0, 0, 0, 0.25);
+  border-radius: 4px;
+  overflow: hidden;
+  display: none;
+  font-style: italic;
+  cursor: pointer;
+}
+
+.list_history {
+  text-align: start;
+}
+
+.list_history-item:hover {
+  background-color: #ccc;
+}
+.list_history-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 16px;
+}
+
+.list_history-item > p {
+  width: 92%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.search {
+  padding: 0px 16px;
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+  outline: none;
+  font-size: 16px;
+  width: 100%;
+}
+
+.search:focus ~ .history_search {
+  display: block;
+}
+
+.no_history {
+  padding: 5px;
+  display: block;
+}
+
+.no_listhistory {
+  display: none;
+}
+
+#search {
+  font-size: 36px;
+  padding-right: 14px;
+  cursor: pointer;
+}
+
+.header_feature {
+  color: #fff;
+}
+
+.header_login,
+.header_contact {
+  height: 34px;
+  margin-right: 20px;
+}
+
+.header_feature-icon {
+  font-size: 34px;
+}
+
+.login,
+.contact {
+  font-size: 16px;
+  margin: 0 5px;
+}
+
+.header_cart-icon {
+  color: #000;
+  font-size: 30px;
+}
+
+.header_cart {
+  position: relative;
+}
+
+.header_cart:hover .list_cart {
+  display: block;
+}
+
+.list_cart {
+  display: none;
+  animation: cart ease-in 0.2s;
+  transform-origin: 0px top;
+  z-index: 9999;
+}
+
+@keyframes cart {
+  from {
+    opacity: 0;
+    transform: scale(0);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.text_red {
+  color: #ff3419;
+}
+
+.cart_quantity {
+  position: absolute;
+  background-color: red;
+  width: 20px;
+  height: 20px;
+  align-items: center;
+  line-height: 20px;
+  color: #fff;
+  border-radius: 50px;
+  top: -6px;
+  right: -14px;
+}
+
+.text_black {
+  color: #000;
+}
