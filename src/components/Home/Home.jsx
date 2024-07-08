@@ -15,6 +15,9 @@ import { TrendingProduct } from "../Product/TrendingProduct";
 import { TechnologyProduct } from "../Product/TechnologyProduct/TechnologyProduct";
 
 export const Home = () => {
+  useEffect(() => {
+    window.scroll(0, 0);
+  });
   const dispatch = useDispatch();
   const loadData = async () => {
     const res = await ApiService.Api();
@@ -64,10 +67,10 @@ export const Home = () => {
     loadDataSuggest();
   }, []);
   return (
-    <div className="content">
+    <>
       <Banner />
       <TrendingProduct onChoosenData={loadDataTrend} />
       <TechnologyProduct />
-    </div>
+    </>
   );
 };

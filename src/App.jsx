@@ -2,6 +2,9 @@ import { Route, Router, Routes } from "react-router-dom";
 import { Header } from "./components/Header/Header";
 import { Home } from "./components/Home/Home";
 import { Footer } from "./components/Footer/Footer";
+import { Introduce } from "./components/Introduce/Introduce";
+import ScrollToTop from "react-scroll-to-top";
+import { useEffect } from "react";
 
 function App() {
   const list = [
@@ -9,10 +12,10 @@ function App() {
     //   to: "/",
     //   title: <Home />,
     // },
-    {
-      to: "gioi-thieu",
-      title: "Giới thiệu",
-    },
+    // {
+    //   to: "gioi-thieu",
+    //   title: "Giới thiệu",
+    // },
     {
       to: "san-pham",
       title: "Sản phẩm",
@@ -40,7 +43,7 @@ function App() {
     <Routes>
       <Route path="" element={<Header />}>
         <Route path="/shopdemo" element={<Home />} />
-
+        <Route path="/gioi-thieu" element={<Introduce />} />
         {list.map((item, index) => (
           <Route path={item.to} key={index} element={<h1>{item.title}</h1>} />
         ))}

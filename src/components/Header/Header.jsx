@@ -104,7 +104,9 @@ export const Header = () => {
 
       <Menu />
 
-      <Outlet />
+      <div className="content">
+        <Outlet />
+      </div>
 
       <div className="footer">
         <Footer />

@@ -23,7 +23,7 @@ const text = [
 
 const list = [
   {
-    to: "/",
+    to: "/shopdemo",
     title: "Trang chủ",
   },
   {
