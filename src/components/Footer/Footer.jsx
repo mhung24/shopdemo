@@ -38,10 +38,6 @@ const list = [
     to: "tin-moi-nhat",
     title: "Tin mới nhất",
   },
-  {
-    to: "cau-hoi-thuong-gap",
-    title: "Câu hỏi thường gặp",
-  },
 
   {
     to: "tuyen-dung",

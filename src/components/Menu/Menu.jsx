@@ -8,7 +8,7 @@ import { ListCategory } from "./ListCategory/ListCategory";
 export const Menu = () => {
   const list = [
     {
-      to: "/shopdemo",
+      to: "/shopdemo/",
       title: "Trang chủ",
     },
     {
@@ -19,10 +19,7 @@ export const Menu = () => {
       to: "san-pham",
       title: "Sản phẩm",
     },
-    {
-      to: "tin-moi-nhat",
-      title: "Tin mới nhất",
-    },
+
     {
       to: "cau-hoi-thuong-gap",
       title: "Câu hỏi thường gặp",

@@ -12,8 +12,6 @@ export const BoxProduct = ({ number }) => {
     (state) => state.ProductSlice.productTrend
   );
 
-  console.log(listProductTrend);
-
   return (
     <>
       <img

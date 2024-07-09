@@ -1,10 +1,10 @@
-import { Route, Router, Routes } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import { Header } from "./components/Header/Header";
 import { Home } from "./components/Home/Home";
-import { Footer } from "./components/Footer/Footer";
 import { Introduce } from "./components/Introduce/Introduce";
-import ScrollToTop from "react-scroll-to-top";
-import { useEffect } from "react";
+import { Question } from "./components/Question/Question";
+import { Recruitment } from "./components/Recruitment/Recruitment";
+import { Contact } from "./components/Contact/Contact";
 
 function App() {
   const list = [
@@ -20,23 +20,19 @@ function App() {
       to: "san-pham",
       title: "Sản phẩm",
     },
-    {
-      to: "tin-moi-nhat",
-      title: "Tin mới nhất",
-    },
-    {
-      to: "cau-hoi-thuong-gap",
-      title: "Câu hỏi thường gặp",
-    },
+    // {
+    //   to: "cau-hoi-thuong-gap",
+    //   title: "Câu hỏi thường gặp",
+    // },
 
-    {
-      to: "tuyen-dung",
-      title: "Tuyển dụng",
-    },
-    {
-      to: "lien-he",
-      title: "Liên hệ",
-    },
+    // {
+    //   to: "tuyen-dung",
+    //   title: "Tuyển dụng",
+    // },
+    // {
+    //   to: "lien-he",
+    //   title: "Liên hệ",
+    // },
   ];
 
   return (
@@ -44,6 +40,9 @@ function App() {
       <Route path="" element={<Header />}>
         <Route path="/shopdemo" element={<Home />} />
         <Route path="/gioi-thieu" element={<Introduce />} />
+        <Route path="/cau-hoi-thuong-gap" element={<Question />} />
+        <Route path="/tuyen-dung" element={<Recruitment />} />
+        <Route path="/lien-he" element={<Contact />} />
         {list.map((item, index) => (
           <Route path={item.to} key={index} element={<h1>{item.title}</h1>} />
         ))}

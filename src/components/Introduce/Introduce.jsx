@@ -6,19 +6,19 @@ export const Introduce = () => {
   useEffect(() => {
     setTimeout(() => {
       window.scroll(0, 0);
-    }, 2);
+    }, 5);
   });
 
   return (
     <div className="intro">
       <div className="flex mt-4 mb-4">
-        <NavLink className={"mr-3 intro_back"} to={"/shopdemo"}>
+        <NavLink className="mr-3 intro_back" to={"/shopdemo"}>
           Trang chủ
         </NavLink>
         /<p className="ml-3 text-yellow-400">Giới thiệu</p>
       </div>
       <div className="border-solid border-b-2 border-red-600 pb-4">
-        <h1 className="text-xl font-semibold">GIỚI THIỆU</h1>
+        <h1 className="text-xl font-semibold uppercase">GIỚI THIỆU</h1>
       </div>
       <p className="mt-4 text-base">
         <span className="font-semibold">POCO MART</span> là hệ thống siêu thị
