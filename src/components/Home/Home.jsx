@@ -9,6 +9,7 @@ import {
   ListDataProduct,
   ListDataFashion,
   ListSuggest,
+  ListProduct,
 } from "../Redux/ProductSlice";
 import { Banner } from "../Banner/Banner";
 import { TrendingProduct } from "../Product/TrendingProduct";
@@ -59,12 +60,21 @@ export const Home = () => {
     dispatch(ListSuggest(products));
   };
 
+  const loadListProduct = async () => {
+    const dataProduct = await ApiService.ApiProduct();
+
+    const { products } = dataProduct.data;
+
+    dispatch(ListProduct(products));
+  };
+
   useEffect(() => {
     loadData();
     loadDataTrend(category);
     loadDataTechnology();
     loadDataFashion();
     loadDataSuggest();
+    loadListProduct();
   }, []);
   return (
     <>

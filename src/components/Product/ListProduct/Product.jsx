@@ -1,0 +1,58 @@
+import React from "react";
+import { GrCart } from "react-icons/gr";
+import { useSelector } from "react-redux";
+
+export const Product = () => {
+  const listProduct = useSelector((state) => state.ProductSlice.product);
+  console.log(listProduct);
+  return (
+    <>
+      {listProduct.map((item, index) => (
+        <div key={index} className="list_infor infor_trend">
+          <img src={item.thumbnail} alt="" className="list_infor-img" />
+
+          <div className="list_infor-text">
+            <p className="list_infor-name"> {item.title}</p>
+            <p className="list_infor-price">$ {item.price}</p>
+            <div className="flex text-center justify-between">
+              <p className="list_infor-price-old">
+                ${" "}
+                {item.price < 10
+                  ? item.price + 10.1
+                  : item.price < 100
+                  ? item.price + 100
+                  : item.price < 1500
+                  ? item.price + 1000
+                  : item.price + 1150}
+              </p>
+              <div className="list_infor-icon-cart">
+                <GrCart />
+              </div>
+            </div>
+
+            {/* <Star /> */}
+          </div>
+
+          <div className="sale">
+            <p>Giảm</p>
+            <p>
+              {(
+                100 -
+                (item.price /
+                  (item.price < 10
+                    ? item.price + 10.1
+                    : item.price < 100
+                    ? item.price + 100
+                    : item.price < 1500
+                    ? item.price + 1000
+                    : item.price + 1150)) *
+                  100
+              ).toFixed()}{" "}
+              %
+            </p>
+          </div>
+        </div>
+      ))}
+    </>
+  );
+};

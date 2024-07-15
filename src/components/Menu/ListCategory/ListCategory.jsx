@@ -3,7 +3,7 @@ import "./ListCategory.css";
 import { useSelector } from "react-redux";
 
 export const ListCategory = () => {
-  const listCategory = useSelector((state) => state.ProductSlice.product);
+  const listCategory = useSelector((state) => state.ProductSlice.category);
 
   return (
     <div className="list_category">

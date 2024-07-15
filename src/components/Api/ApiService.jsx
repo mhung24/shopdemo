@@ -4,7 +4,7 @@ const url = "https://dummyjson.com/products";
 
 const ApiService = {
   ApiProduct: async () => {
-    return await axios(`${url}?limit=1000`);
+    return await axios(`${url}?limit=20`);
   },
 
   Api: async () => {

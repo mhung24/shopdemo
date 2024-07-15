@@ -1,23 +1,20 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  product: [],
+  category: [],
   productTrend: [],
   technologyProduct: [],
   fashion: [],
   suggest: [],
+  product: [],
 };
 
 export const ProductSlice = createSlice({
   name: "ProductSlice",
   initialState,
   reducers: {
-    // ListProduct: (state, action) => {
-    //   return { ...state, product: action.payload };
-    // },
-
     ListCategory: (state, action) => {
-      return { ...state, product: action.payload };
+      return { ...state, category: action.payload };
     },
 
     ListProductTrend: (state, action) => {
@@ -35,6 +32,9 @@ export const ProductSlice = createSlice({
     ListSuggest: (state, action) => {
       return { ...state, suggest: action.payload };
     },
+    ListProduct: (state, action) => {
+      return { ...state, product: action.payload };
+    },
   },
 });
 
@@ -44,6 +44,7 @@ export const {
   ListDataProduct,
   ListDataFashion,
   ListSuggest,
+  ListProduct,
 } = ProductSlice.actions;
 
 export default ProductSlice.reducer;

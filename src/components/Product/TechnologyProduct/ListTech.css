@@ -272,3 +272,31 @@
   top: -8px;
   right: -8px;
 }
+
+.list_category-product-item:hover {
+  background-color: #ffb416;
+  color: #fff;
+}
+
+.list_category-product-item {
+  padding: 4px 6px;
+}
+
+.arrange {
+  color: #fff;
+}
+
+.arrange-item {
+  padding: 4px 12px;
+  background: #eb3e32;
+}
+
+.arrange-item:hover {
+  background-color: #ffb416;
+}
+
+.list_item-product {
+  width: 880px;
+  display: flex;
+  flex-wrap: wrap;
+}
