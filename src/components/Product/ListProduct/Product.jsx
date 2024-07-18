@@ -4,11 +4,11 @@ import { useSelector } from "react-redux";
 
 export const Product = () => {
   const listProduct = useSelector((state) => state.ProductSlice.product);
-  console.log(listProduct);
+
   return (
     <>
       {listProduct.map((item, index) => (
-        <div key={index} className="list_infor infor_trend">
+        <div key={index} className="list_infor infor_product">
           <img src={item.thumbnail} alt="" className="list_infor-img" />
 
           <div className="list_infor-text">

@@ -300,3 +300,8 @@
   display: flex;
   flex-wrap: wrap;
 }
+
+.infor_product {
+  width: 210px;
+  margin: 10px 0;
+}

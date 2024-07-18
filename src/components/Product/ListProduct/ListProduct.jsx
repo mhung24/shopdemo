@@ -2,6 +2,7 @@ import React from "react";
 import { useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
 import { Product } from "./Product";
+import { NextDataProduct } from "../../NextDataProduct/NextDataProduct";
 
 const list = [
   {
@@ -46,8 +47,11 @@ export const ListProduct = () => {
           ))}
         </div>
 
-        <div className="list_item-product">
+        <div className="list_item-product justify-between mb-10">
           <Product />
+        </div>
+        <div className="flex justify-center">
+          <NextDataProduct />
         </div>
       </div>
     </div>

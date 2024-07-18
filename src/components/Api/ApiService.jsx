@@ -3,8 +3,8 @@ import axios from "axios";
 const url = "https://dummyjson.com/products";
 
 const ApiService = {
-  ApiProduct: async () => {
-    return await axios(`${url}?limit=20`);
+  ApiProduct: async (skip = 0) => {
+    return await axios(`${url}?limit=20&skip=${skip}`);
   },
 
   Api: async () => {
@@ -25,6 +25,10 @@ const ApiService = {
 
   Suggest: async () => {
     return await axios(`${url}/category/laptops`);
+  },
+
+  DataPage: async () => {
+    return await axios(url);
   },
 };
 

@@ -1,0 +1,17 @@
+.page_icon,
+.next_page {
+  /* background-color: #333; */
+  margin: 0 5px;
+  width: 35px;
+  height: 35px;
+  line-height: 35px;
+  text-align: center;
+  border: 1px solid #ccc;
+}
+
+.page_icon:hover,
+.next_page:hover {
+  background-color: #ffb416;
+  border: 1px solid #ffb416;
+  color: #fff;
+}

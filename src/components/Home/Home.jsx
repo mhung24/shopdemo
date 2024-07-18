@@ -60,7 +60,7 @@ export const Home = () => {
     dispatch(ListSuggest(products));
   };
 
-  const loadListProduct = async () => {
+  const loadListProduct = async (skip) => {
     const dataProduct = await ApiService.ApiProduct();
 
     const { products } = dataProduct.data;
