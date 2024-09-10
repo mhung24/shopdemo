@@ -7,6 +7,7 @@ const initialState = {
   fashion: [],
   suggest: [],
   product: [],
+  infor: [],
 };
 
 export const ProductSlice = createSlice({

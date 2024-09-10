@@ -50,7 +50,7 @@ export const ListProduct = () => {
         <div className="list_item-product justify-between mb-10">
           <Product />
         </div>
-        <div className="flex justify-center">
+        <div className="flex justify-center mb-7">
           <NextDataProduct />
         </div>
       </div>

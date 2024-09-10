@@ -104,7 +104,7 @@
   font-size: 34px;
 }
 
-.login,
+.link_login,
 .contact {
   font-size: 16px;
   margin: 0 5px;
@@ -142,12 +142,12 @@
 }
 
 .text_red {
-  color: #ff3419;
+  color: var(--red-color);
 }
 
 .cart_quantity {
   position: absolute;
-  background-color: red;
+  background-color: var(--red-color);
   width: 20px;
   height: 20px;
   align-items: center;

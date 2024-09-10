@@ -292,9 +292,8 @@
 }
 
 .arrange-item:hover {
-  background-color: #ffb416;
+  background-color: var(--yellow-color);
 }
-
 .list_item-product {
   width: 880px;
   display: flex;

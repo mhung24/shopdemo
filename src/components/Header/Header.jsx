@@ -80,10 +80,16 @@ export const Header = () => {
 
           <div className="header_login flex flex_fun">
             <CiUser className="header_feature-icon text_red" />
-            <div className="login ">
+            <div className="link_login">
               <p className="text_black">Xin chào</p>
               {list.map((item, index) => (
-                <NavLink className="text_red" to={item.to} key={index}>
+                <NavLink
+                  className={({ isActive }) =>
+                    isActive ? "text_red" : "text_red"
+                  }
+                  to={item.to}
+                  key={index}
+                >
                   {item.title}
                 </NavLink>
               ))}

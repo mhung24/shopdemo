@@ -30,6 +30,10 @@ const ApiService = {
   DataPage: async () => {
     return await axios(url);
   },
+
+  InforDataProduct: async (id) => {
+    return await axios(`${url}/${id}`);
+  },
 };
 
 export default ApiService;

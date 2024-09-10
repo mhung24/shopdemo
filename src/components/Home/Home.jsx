@@ -14,6 +14,8 @@ import {
 import { Banner } from "../Banner/Banner";
 import { TrendingProduct } from "../Product/TrendingProduct";
 import { TechnologyProduct } from "../Product/TechnologyProduct/TechnologyProduct";
+import { InforProduct } from "../InforProduct/InforProduct";
+import { Product } from "../Product/ListProduct/Product";
 
 export const Home = () => {
   useEffect(() => {
@@ -32,7 +34,7 @@ export const Home = () => {
     const dataTrend = await ApiService.ApiTrendingProduct(category);
 
     const { products } = dataTrend.data;
-
+    console.log(dataTrend);
     dispatch(ListProductTrend(products.slice(0, 4)));
   };
 
@@ -50,6 +52,7 @@ export const Home = () => {
     const { products } = dataFashion.data;
 
     dispatch(ListDataFashion(products));
+    console.log(products);
   };
 
   const loadDataSuggest = async () => {

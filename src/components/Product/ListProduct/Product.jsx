@@ -1,18 +1,32 @@
 import React from "react";
 import { GrCart } from "react-icons/gr";
 import { useSelector } from "react-redux";
+import { NavLink } from "react-router-dom";
+import { InforProduct } from "../../InforProduct/InforProduct";
 
-export const Product = () => {
+export const Product = (props) => {
   const listProduct = useSelector((state) => state.ProductSlice.product);
+  const { onChoosenData } = props;
 
   return (
     <>
       {listProduct.map((item, index) => (
-        <div key={index} className="list_infor infor_product">
-          <img src={item.thumbnail} alt="" className="list_infor-img" />
+        <div className="list_infor infor_product" key={index}>
+          <NavLink
+            className={({ isActive }) => (isActive ? "" : "")}
+            to={{ pathname: `${item.id}` }}
+          >
+            <img src={item.thumbnail} alt="" className="list_infor-img" />
+          </NavLink>
 
           <div className="list_infor-text">
-            <p className="list_infor-name"> {item.title}</p>
+            <NavLink
+              className={({ isActive }) => (isActive ? "" : "")}
+              to={{ pathname: `${item.id}` }}
+            >
+              <p className="list_infor-name"> {item.title}</p>
+            </NavLink>
+
             <p className="list_infor-price">$ {item.price}</p>
             <div className="flex text-center justify-between">
               <p className="list_infor-price-old">
@@ -24,6 +38,7 @@ export const Product = () => {
                   : item.price < 1500
                   ? item.price + 1000
                   : item.price + 1150}
+                {/* $ {item.discountPercentage + item.price} */}
               </p>
               <div className="list_infor-icon-cart">
                 <GrCart />
