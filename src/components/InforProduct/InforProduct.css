@@ -21,3 +21,149 @@
   color: #eb3e32;
   font-weight: 600;
 }
+
+.quantity {
+  /* border: 1px solid #000; */
+  width: 100px;
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+
+.quantity > p {
+  border: 1px solid #000;
+  width: calc(100px / 3);
+  text-align: center;
+}
+
+.quantity > p:nth-child(2) {
+  border-left: 0;
+  border-right: 0;
+}
+
+.add_to-cart {
+  margin-top: 20px;
+  cursor: pointer;
+  width: 100%;
+}
+
+.add_cart {
+  display: flex;
+}
+
+.cart_btn,
+.pay_btn {
+  color: #fff;
+  padding: 10px 20px;
+  text-transform: uppercase;
+  border-radius: 4px;
+  margin-right: 10px;
+}
+
+.cart_btn {
+  background-color: #eb3e32;
+  border: 1px solid #eb3e32;
+}
+
+.pay_btn {
+  background-color: #0fa80f;
+  border: 1px solid #0fa80f;
+}
+
+.cart_btn:hover {
+  background-color: #fff;
+  border: 1px solid #eb3e32;
+  color: #eb3e32;
+}
+
+.pay_btn:hover {
+  background-color: #fff;
+  border: 1px solid #ffb416;
+  color: #ffb416;
+}
+
+.call_btn {
+  width: 250px;
+  background-color: #ffb416;
+  text-align: center;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  color: #fff;
+}
+
+.phone_number:hover {
+  color: #eb3e32;
+}
+
+.favourite_product {
+  background-color: #ffb416;
+  font-size: 44px;
+  color: #fff;
+  border-radius: 4px;
+}
+
+.favourite_product:hover {
+  opacity: 70%;
+}
+
+.detail_products {
+  background-color: #eb3e32;
+  padding: 6px 14px;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 600;
+  margin-right: 2px;
+}
+
+.detail_products-active {
+  background-color: #ffb416;
+  padding: 6px 14px;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 600;
+  margin-right: 2px;
+}
+
+.detail_content {
+  border: 1px solid #ccc;
+}
+
+.detail_content > p {
+  padding: 10px 20px;
+}
+
+.userful_infor {
+  background-color: #fafafa;
+  height: 260px;
+}
+
+.userful_infor-header {
+  padding: 10px 10px 0 10px;
+  font-size: 18px;
+}
+
+.care-detail-box {
+  padding: 10px;
+}
+
+.care-detail-item {
+  border-bottom: 1px solid #eee;
+  padding: 8px 0;
+}
+
+.support-ask-items {
+  display: flex;
+  align-items: center;
+}
+
+.support-ask-items-icon > a > img {
+  width: 20px;
+  margin-right: 8px;
+}
+
+.vc-item:hover,
+.tt-item:hover,
+.bh-item:hover {
+  color: #ffb416;
+}
