@@ -5,6 +5,7 @@ import "./InforProduct.css";
 import { CiHeart } from "react-icons/ci";
 import mess from "../../assets/images/messenger-icon.png";
 import zalo from "../../assets/images/zalo-icon.png";
+import { Conment } from "../Comment/Conment";
 
 export const InforProduct = () => {
   useEffect(() => {
@@ -55,7 +56,6 @@ export const InforProduct = () => {
     }
   };
 
-  // console.log(dataInforProduct);
   useEffect(() => {
     if (idProduct) {
       loadData();
@@ -67,6 +67,12 @@ export const InforProduct = () => {
   };
 
   const [activeBtn, setActiveBtn] = useState(0);
+
+  const [activeImg, setActiveImg] = useState({
+    title: "",
+    number: 0,
+  });
+
   return (
     <div className="">
       <div className="flex mt-4 mb-4">
@@ -83,18 +89,34 @@ export const InforProduct = () => {
         <div>
           <div className="flex">
             <div className="infor-product-img">
-              <img
-                src={dataInforProduct.thumbnail}
-                alt=""
-                className="infor-product-img-big"
-              />
-              <div>
+              <div className="infor-product-img-wrap">
+                <img
+                  src={
+                    activeImg.title === ""
+                      ? dataInforProduct.thumbnail
+                      : activeImg.title
+                  }
+                  alt=""
+                  className="infor-product-img-big"
+                />
+              </div>
+              <div className="flex mt-4">
                 {dataInforProduct.images?.map((item, index) => (
                   <div key={index}>
                     <img
-                      className="infor-product-img-small"
+                      className={
+                        activeImg.number === index
+                          ? "infor-product-img-small-active"
+                          : "infor-product-img-small"
+                      }
                       src={item}
                       alt=""
+                      onClick={() => {
+                        setActiveImg({
+                          title: item,
+                          number: index,
+                        });
+                      }}
                     />
                   </div>
                 ))}
@@ -213,13 +235,15 @@ export const InforProduct = () => {
               </div>
 
               <div className="detail_content">
-                <p className={activeBtn === 0 ? "block" : "hidden"}>
+                <div className={activeBtn === 0 ? "block" : "hidden"}>
                   Thông tin chi tiết
-                </p>
-                <p className={activeBtn === 1 ? "block" : "hidden"}>
+                </div>
+                <div className={activeBtn === 1 ? "block" : "hidden"}>
                   Hướng dẫn thanh toán
-                </p>
-                <p className={activeBtn === 2 ? "block" : "hidden"}>Đánh giá</p>
+                </div>
+                <div className={activeBtn === 2 ? "block" : "hidden"}>
+                  <Conment />
+                </div>
               </div>
             </div>
           </div>

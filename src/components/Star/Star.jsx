@@ -3,7 +3,9 @@ import Rating from "@mui/material/Rating";
 import Stack from "@mui/material/Stack";
 import "./Star.css";
 
-export const Star = () => {
+export const Star = (a) => {
+  console.log(a);
+
   return (
     <Stack spacing={1}>
       <Rating
