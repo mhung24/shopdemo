@@ -6,21 +6,34 @@ import "./Comment.css";
 import Stack from "@mui/material/Stack";
 import Rating from "@mui/material/Rating";
 
+import Box from "@mui/material/Box";
+import Pagination from "@mui/material/Pagination";
+
 export const Conment = () => {
+  const [value, setValue] = useState(0);
   const { id: idProduct } = useParams();
   const [comments, setComments] = useState({
-    id: null,
     reviews: [],
   });
 
+  const [searchComments, setSearchComments] = useState({
+    reviews: [],
+  });
   const [mediumComment, setMediumComment] = useState(0);
+  const [lengthCommnet, setLengthComment] = useState(1);
+  const [activeSearchComment, setActiveSearchComment] = useState(0);
+
   const loadData = async () => {
     const dataProduct = await ApiService.InforDataProduct(idProduct);
     const { id, reviews } = dataProduct.data;
+
     setMediumComment(reviews.length);
     if (dataProduct.status === 200) {
       setComments({
-        id,
+        reviews,
+      });
+
+      setSearchComments({
         reviews,
       });
     }
@@ -29,21 +42,70 @@ export const Conment = () => {
       a += element.rating;
     });
 
+    setLengthComment(Math.ceil(dataProduct.data.reviews.length / 3));
+
     setMediumComment(parseFloat((a / reviews.length).toFixed(1)));
   };
-
-  console.log(typeof mediumComment);
 
   useEffect(() => {
     if (idProduct) {
       loadData();
     }
   }, []);
+
+  const selectStar = (key) => {
+    if (key !== "all") {
+      const reviews = searchComments.reviews.filter((i) => i.rating === key);
+
+      setComments({ reviews });
+    } else {
+      const reviews = searchComments.reviews;
+
+      setComments({ reviews });
+    }
+  };
+
+  const setId = (index) => {
+    setActiveSearchComment(index);
+  };
+
+  const star = [
+    {
+      key: "all",
+      title: "Tất cả",
+    },
+
+    {
+      key: 5,
+      title: "5 sao",
+    },
+
+    {
+      key: 4,
+      title: "4 sao",
+    },
+
+    {
+      key: 3,
+      title: "3 sao",
+    },
+
+    {
+      key: 2,
+      title: "2 sao",
+    },
+    {
+      key: 1,
+      title: "1 sao",
+    },
+  ];
+
   return (
     <>
       <div className="search_comment">
         <div className="tbl_star">
           <p>{mediumComment} trên 5</p>
+
           <Stack spacing={1}>
             <Rating
               name="half-rating-read"
@@ -57,39 +119,60 @@ export const Conment = () => {
         </div>
 
         <div className="flex star_wrap">
-          <p>Tất cả</p>
-          <p>5 sao</p>
-          <p>4 sao</p>
-          <p>3 sao</p>
-          <p>2 sao</p>
-          <p>1 sao</p>
+          {star.map((item, index) => (
+            <>
+              <p
+                className={
+                  index === activeSearchComment ? "active_search-comment" : ""
+                }
+                onClick={() => {
+                  selectStar(item.key);
+                  setId(index);
+                }}
+                key={index}
+              >
+                {item.title}
+              </p>
+            </>
+          ))}
         </div>
       </div>
-      {comments.reviews?.map((item, index) => (
-        <div className="flex items-start comment_wrap">
-          <div key={index} className="mr-2">
-            <img src={avata} alt="" className="comments_avata" />
-          </div>
+      <div className="comment_ct">
+        {comments.reviews.length !== 0 ? (
+          comments.reviews?.map((item, index) => (
+            <div className="flex items-start comment_wrap ">
+              <div key={index} className="mr-2">
+                <img src={avata} alt="" className="comments_avata" />
+              </div>
 
-          <div>
-            <p className="commenter_name">{item.reviewerName}</p>
-            <Stack spacing={1}>
-              <Rating
-                name="half-rating-read"
-                defaultValue={item.rating}
-                precision={0.5}
-                readOnly
-                className="star"
-                size="small"
-              />
-            </Stack>
+              <div>
+                <p className="commenter_name">{item.reviewerName}</p>
+                <Box sx={{ "& > legend": { mt: 2 } }}>
+                  <Rating
+                    name="read-only"
+                    value={item.rating}
+                    readOnly
+                    size="small"
+                    defaultChecked
+                  />
+                </Box>
 
-            <p className="comment_date">{item.date.slice(0, 19)}</p>
+                <p className="comment_date">{item.date.slice(0, 19)}</p>
 
-            <p className="is_comment">{item.comment}</p>
-          </div>
-        </div>
-      ))}
+                <p className="is_comment">{item.comment}</p>
+              </div>
+            </div>
+          ))
+        ) : (
+          <p className="no_comment">Không có comment nào !!</p>
+        )}
+      </div>
+
+      <div className="flex justify-center mt-4">
+        <Stack spacing={2}>
+          <Pagination count={lengthCommnet} color="primary" />
+        </Stack>
+      </div>
     </>
   );
 };
