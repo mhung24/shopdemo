@@ -16,6 +16,7 @@ import { TrendingProduct } from "../Product/TrendingProduct";
 import { TechnologyProduct } from "../Product/TechnologyProduct/TechnologyProduct";
 import { InforProduct } from "../InforProduct/InforProduct";
 import { Product } from "../Product/ListProduct/Product";
+import { NextDataProduct } from "../NextDataProduct/NextDataProduct";
 
 export const Home = () => {
   useEffect(() => {
@@ -29,6 +30,7 @@ export const Home = () => {
   };
 
   const category = "laptops";
+  const skip = 10;
 
   const loadDataTrend = async (category) => {
     const dataTrend = await ApiService.ApiTrendingProduct(category);
@@ -64,7 +66,8 @@ export const Home = () => {
   };
 
   const loadListProduct = async (skip) => {
-    const dataProduct = await ApiService.ApiProduct();
+    const dataProduct = await ApiService.ApiProduct(skip);
+    console.log(dataProduct, "12");
 
     const { products } = dataProduct.data;
 
@@ -84,6 +87,7 @@ export const Home = () => {
       <Banner />
       <TrendingProduct onChoosenData={loadDataTrend} />
       <TechnologyProduct />
+      <NextDataProduct onChoosenList={loadListProduct} />
     </>
   );
 };

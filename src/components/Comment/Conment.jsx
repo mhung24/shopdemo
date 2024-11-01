@@ -37,6 +37,7 @@ export const Conment = () => {
         reviews,
       });
     }
+
     let a = 0;
     dataProduct.data.reviews.forEach((element) => {
       a += element.rating;
@@ -100,6 +101,9 @@ export const Conment = () => {
     },
   ];
 
+  const test = (item) => {
+    console.log(item);
+  };
   return (
     <>
       <div className="search_comment">

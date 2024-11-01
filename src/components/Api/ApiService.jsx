@@ -3,7 +3,7 @@ import axios from "axios";
 const url = "https://dummyjson.com/products";
 
 const ApiService = {
-  ApiProduct: async (skip = 0) => {
+  ApiProduct: async (skip) => {
     return await axios(`${url}?limit=20&skip=${skip}`);
   },
 

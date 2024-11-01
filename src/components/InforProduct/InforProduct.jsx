@@ -13,6 +13,8 @@ export const InforProduct = () => {
       window.scroll(0, 0);
     }, 5);
   });
+
+  const [quantityProduct, setQuantityProduct] = useState(1);
   const { id: idProduct } = useParams();
   const [dataInforProduct, setDataInforProduct] = useState({
     id: null,
@@ -72,6 +74,16 @@ export const InforProduct = () => {
     title: "",
     number: 0,
   });
+
+  const reduceNumber = () => {
+    if (quantityProduct !== 1) {
+      setQuantityProduct(quantityProduct - 1);
+    } else setQuantityProduct(1);
+  };
+
+  const increaseNumber = () => {
+    setQuantityProduct(quantityProduct + 1);
+  };
 
   return (
     <div className="">
@@ -157,9 +169,9 @@ export const InforProduct = () => {
               </p>
               {/* <p className={dataInforProduct} >Size : </p> */}
               <div className="quantity">
-                <p>-</p>
-                <p>1</p>
-                <p>+</p>
+                <p onClick={() => reduceNumber()}>-</p>
+                <p>{quantityProduct}</p>
+                <p onClick={() => increaseNumber(1)}>+</p>
               </div>
 
               <div className="add_to-cart">

@@ -19,7 +19,9 @@ const list = [
   },
 ];
 
-export const ListProduct = () => {
+export const ListProduct = (props) => {
+  console.log(props);
+
   const listCategory = useSelector((state) => state.ProductSlice.category);
   return (
     <div className="product flex mt-3 mb-3">
