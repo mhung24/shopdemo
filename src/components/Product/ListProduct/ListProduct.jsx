@@ -1,8 +1,10 @@
-import React from "react";
-import { useSelector } from "react-redux";
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
 import { Product } from "./Product";
 import { NextDataProduct } from "../../NextDataProduct/NextDataProduct";
+import ApiService from "../../Api/ApiService";
+import { ListDataNextProduct } from "../../Redux/ProductSlice";
 
 const list = [
   {
@@ -19,9 +21,18 @@ const list = [
   },
 ];
 
-export const ListProduct = (props) => {
-  console.log(props);
+export const ListProduct = () => {
+  const dispatch = useDispatch();
+  const loadNextDataProduct = async (skip) => {
+    const dataNextProduct = await ApiService.DataNextProduct(skip);
 
+    const { products } = dataNextProduct.data;
+    dispatch(ListDataNextProduct(products));
+  };
+
+  useEffect(() => {
+    loadNextDataProduct(0);
+  }, []);
   const listCategory = useSelector((state) => state.ProductSlice.category);
   return (
     <div className="product flex mt-3 mb-3">
@@ -53,7 +64,7 @@ export const ListProduct = (props) => {
           <Product />
         </div>
         <div className="flex justify-center mb-7">
-          <NextDataProduct />
+          <NextDataProduct onChoosenData={loadNextDataProduct} />
         </div>
       </div>
     </div>

@@ -14,9 +14,6 @@ import {
 import { Banner } from "../Banner/Banner";
 import { TrendingProduct } from "../Product/TrendingProduct";
 import { TechnologyProduct } from "../Product/TechnologyProduct/TechnologyProduct";
-import { InforProduct } from "../InforProduct/InforProduct";
-import { Product } from "../Product/ListProduct/Product";
-import { NextDataProduct } from "../NextDataProduct/NextDataProduct";
 
 export const Home = () => {
   useEffect(() => {
@@ -30,13 +27,11 @@ export const Home = () => {
   };
 
   const category = "laptops";
-  const skip = 10;
 
   const loadDataTrend = async (category) => {
     const dataTrend = await ApiService.ApiTrendingProduct(category);
 
     const { products } = dataTrend.data;
-    console.log(dataTrend);
     dispatch(ListProductTrend(products.slice(0, 4)));
   };
 
@@ -54,7 +49,6 @@ export const Home = () => {
     const { products } = dataFashion.data;
 
     dispatch(ListDataFashion(products));
-    console.log(products);
   };
 
   const loadDataSuggest = async () => {
@@ -65,29 +59,18 @@ export const Home = () => {
     dispatch(ListSuggest(products));
   };
 
-  const loadListProduct = async (skip) => {
-    const dataProduct = await ApiService.ApiProduct(skip);
-    console.log(dataProduct, "12");
-
-    const { products } = dataProduct.data;
-
-    dispatch(ListProduct(products));
-  };
-
   useEffect(() => {
     loadData();
     loadDataTrend(category);
     loadDataTechnology();
     loadDataFashion();
     loadDataSuggest();
-    loadListProduct();
   }, []);
   return (
     <>
       <Banner />
       <TrendingProduct onChoosenData={loadDataTrend} />
       <TechnologyProduct />
-      <NextDataProduct onChoosenList={loadListProduct} />
     </>
   );
 };

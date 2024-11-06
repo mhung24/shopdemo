@@ -6,6 +6,7 @@ import banner_2 from "../../../assets/images/banner_fashion_2.jpg";
 import { useSelector } from "react-redux";
 import { GrCart } from "react-icons/gr";
 import { Star } from "../../Star/Star";
+import { NavLink } from "react-router-dom";
 
 export const Fashion = () => {
   const data = useSelector((state) => state.ProductSlice.fashion);
@@ -20,10 +21,21 @@ export const Fashion = () => {
       <div className="list_technologyproduct-item">
         {data.map((item, index) => (
           <div key={index} className="list_infor">
-            <img src={item.thumbnail} alt="" className="list_infor-img" />
+            <NavLink
+              className={({ isActive }) => (isActive ? "" : "")}
+              to={{ pathname: `/san-pham/${item.id}` }}
+            >
+              <img src={item.thumbnail} alt="" className="list_infor-img" />
+            </NavLink>
 
             <div className="list_infor-text">
-              <p className="list_infor-name">{item.title}</p>
+              <NavLink
+                className={({ isActive }) => (isActive ? "" : "")}
+                to={{ pathname: `/san-pham/${item.id}` }}
+              >
+                <p className="list_infor-name">{item.title}</p>
+              </NavLink>
+
               <p className="list_infor-price">$ {item.price}</p>
               <div className="flex text-center justify-between">
                 <p className="list_infor-price-old">

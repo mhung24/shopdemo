@@ -4,7 +4,7 @@ const url = "https://dummyjson.com/products";
 
 const ApiService = {
   ApiProduct: async (skip) => {
-    return await axios(`${url}?limit=20&skip=${skip}`);
+    return await axios(`${url}?limit=20&skip=${0}`);
   },
 
   Api: async () => {
@@ -20,7 +20,7 @@ const ApiService = {
   },
 
   Fashion: async () => {
-    return await axios(`${url}/category/mens-shirts`);
+    return await axios(`${url}/category/mens-shirts`); 
   },
 
   Suggest: async () => {
@@ -33,6 +33,10 @@ const ApiService = {
 
   InforDataProduct: async (id) => {
     return await axios(`${url}/${id}`);
+  },
+
+  DataNextProduct: async (skip) => {
+    return await axios(`${url}?limit=20&skip=${skip}`);
   },
 };
 

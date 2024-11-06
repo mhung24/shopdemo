@@ -9,6 +9,7 @@ import { ListProduct } from "./components/Product/ListProduct/ListProduct";
 import { Login } from "./components/Login/Login";
 import { Register } from "./components/Register/Register";
 import { InforProduct } from "./components/InforProduct/InforProduct";
+import { Categryproduct } from "./components/CategoryProduct/Categryproduct";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
         <Route path="/account/login" element={<Login />} />
         <Route path="/account/register" element={<Register />} />
         <Route path="/san-pham/:id" element={<InforProduct />} />
+        <Route path="/shopdemo/:id" element={<Categryproduct />} />
       </Route>
     </Routes>
   );

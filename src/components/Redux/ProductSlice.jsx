@@ -8,6 +8,7 @@ const initialState = {
   suggest: [],
   product: [],
   infor: [],
+  nextProduct: [],
 };
 
 export const ProductSlice = createSlice({
@@ -36,6 +37,10 @@ export const ProductSlice = createSlice({
     ListProduct: (state, action) => {
       return { ...state, product: action.payload };
     },
+
+    ListDataNextProduct: (state, action) => {
+      return { ...state, nextProduct: action.payload };
+    },
   },
 });
 
@@ -46,6 +51,7 @@ export const {
   ListDataFashion,
   ListSuggest,
   ListProduct,
+  ListDataNextProduct,
 } = ProductSlice.actions;
 
 export default ProductSlice.reducer;

@@ -6,6 +6,7 @@ import { GrCart } from "react-icons/gr";
 import trend_img from "../../assets/images/trend_img.jpg";
 import trend_img1 from "../../assets/images/trend_img1.jpg";
 import trend_img2 from "../../assets/images/trend_img2.jpg";
+import { NavLink } from "react-router-dom";
 
 export const BoxProduct = ({ number }) => {
   const listProductTrend = useSelector(
@@ -20,10 +21,20 @@ export const BoxProduct = ({ number }) => {
       />
       {listProductTrend.map((item, index) => (
         <div key={index} className="list_infor infor_trend">
-          <img src={item.thumbnail} alt="" className="list_infor-img" />
+          <NavLink
+            className={({ isActive }) => (isActive ? "" : "")}
+            to={{ pathname: `/san-pham/${item.id}` }}
+          >
+            <img src={item.thumbnail} alt="" className="list_infor-img" />
+          </NavLink>
 
           <div className="list_infor-text">
-            <p className="list_infor-name"> {item.title}</p>
+            <NavLink
+              className={({ isActive }) => (isActive ? "" : "")}
+              to={{ pathname: `/san-pham/${item.id}` }}
+            >
+              <p className="list_infor-name">{item.title}</p>
+            </NavLink>
             <p className="list_infor-price">$ {item.price}</p>
             <div className="flex text-center justify-between">
               <p className="list_infor-price-old">

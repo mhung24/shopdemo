@@ -4,9 +4,8 @@ import { useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
 import { InforProduct } from "../../InforProduct/InforProduct";
 
-export const Product = (props) => {
-  const listProduct = useSelector((state) => state.ProductSlice.product);
-  const { onChoosenData } = props;
+export const Product = () => {
+  const listProduct = useSelector((state) => state.ProductSlice.nextProduct);
 
   return (
     <>

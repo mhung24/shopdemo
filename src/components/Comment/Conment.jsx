@@ -10,7 +10,6 @@ import Box from "@mui/material/Box";
 import Pagination from "@mui/material/Pagination";
 
 export const Conment = () => {
-  const [value, setValue] = useState(0);
   const { id: idProduct } = useParams();
   const [comments, setComments] = useState({
     reviews: [],
@@ -124,20 +123,19 @@ export const Conment = () => {
 
         <div className="flex star_wrap">
           {star.map((item, index) => (
-            <>
-              <p
-                className={
-                  index === activeSearchComment ? "active_search-comment" : ""
-                }
-                onClick={() => {
-                  selectStar(item.key);
-                  setId(index);
-                }}
-                key={index}
-              >
-                {item.title}
-              </p>
-            </>
+            <p
+              className={
+                index === activeSearchComment ? "active_search-comment" : ""
+              }
+              key={index}
+              onClick={() => {
+                selectStar(item.key);
+                setId(index);
+              }}
+              // key={index}
+            >
+              {item.title}
+            </p>
           ))}
         </div>
       </div>
